@@ -1,0 +1,137 @@
+### CREATE A DIRECTOR
+POST http://127.0.0.1:3000/api/directors/
+Content-type: application/json
+
+{
+  "name": "Director 1",
+  "birthDate": "1999-01-01",
+  "biography": "Director test"
+}
+
+### GET ALL DIRECTORS
+
+GET http://127.0.0.1:3000/api/directors/
+
+###GET A DIRECTOR BY ID
+
+GET http://127.0.0.1:3000/api/directors/661fe4107dc17dc58c8a10fc
+
+### UPDATE A DIRECTOR BY ID
+PUT http://127.0.0.1:3000/api/directors/661fe4107dc17dc58c8a10fc
+Content-type: application/json
+
+{
+  "name": "Director updated",
+  "birthDate": "1999-01-01",
+  "biography": "Director test"
+}
+
+### DELETE A DIRECTOR BY ID
+
+DELETE http://127.0.0.1:3000/api/directors/661fe4107dc17dc58c8a10fc
+
+###################
+
+### CREATE A FILM
+POST http://127.0.0.1:3000/api/films/
+Content-type: application/json
+
+{
+  "title": "Terminator", 
+  "releaseYear": "2024-04-17", 
+  "genre": "action", 
+  "directors": [
+    {
+      "name": "Director 1",
+      "birthDate": "1999-01-01",
+      "biography": "Director test"
+    }
+  ]
+}
+
+### GET ALL FILMS
+
+GET http://127.0.0.1:3000/api/films/
+
+###GET A FILM BY ID
+
+GET http://127.0.0.1:3000/api/films/661fe8f74da816f317c753b9
+
+### UPDATE A FILM BY ID
+PUT http://127.0.0.1:3000/api/films/661fe8f74da816f317c753b9
+Content-type: application/json
+
+{
+  "title": "Terminator Updtated", 
+  "releaseYear": "2024-04-17", 
+  "genre": "action", 
+  "directors": [
+    {
+      "name": "Director 1",
+      "birthDate": "1999-01-01",
+      "biography": "Director test"
+    }
+  ]
+}
+
+### DELETE A FILM BY ID
+
+DELETE http://127.0.0.1:3000/api/films/661fe8f74da816f317c753b9
+
+###################
+
+### CREATE A SESSION
+POST http://127.0.0.1:3000/api/sessions/
+Content-type: application/json
+
+{
+  "film": {
+    "title": "Terminator", 
+    "releaseYear": "2024-04-17", 
+    "genre": "action", 
+    "directors": [
+      {
+        "name": "Director 1",
+        "birthDate": "1999-01-01",
+        "biography": "Director test"
+      }
+    ]
+  },
+  "date": "2024-04-20",
+  "time": "10:00:00",
+  "availableSeats": "40"
+}
+
+### GET ALL SESSIONS
+
+GET http://127.0.0.1:3000/api/sessions/
+
+###GET SESSIONS BY ID
+
+GET http://127.0.0.1:3000/api/sessions/661feb05e093c5e913c75b3b
+
+### UPDATE A SESSION BY ID
+PUT http://127.0.0.1:3000/api/sessions/661feb05e093c5e913c75b3b
+Content-type: application/json
+
+{
+  "film": {
+    "title": "Terminator updated", 
+    "releaseYear": "2024-04-17", 
+    "genre": "action", 
+    "directors": [
+      {
+        "name": "Director 1",
+        "birthDate": "1999-01-01",
+        "biography": "Director test"
+      }
+    ]
+  },
+  "date": "2024-04-20",
+  "time": "10:30:00", 
+  "availableSeats": "1"
+}
+
+### DELETE A SESSION BY ID
+
+DELETE http://127.0.0.1:3000/api/sessions/661feb05e093c5e913c75b3b
